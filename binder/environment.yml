@@ -1,22 +1,28 @@
 name: hsf-india
 channels:
   - defaults
+  - nvidia/label/cuda-11.8.0
 dependencies:
   - python=3.10
+  - cuda=11.8
+  - cudnn=8.9.2
+  - cuda-nvcc
   - pip
-#  - emacs - broken after install, so just remove it
+#  - emacs
   - zstandard
   - zstd
   - clang-tools
   - fsspec
   - lz4
+  - pyarrow
   - python-xxhash
-  - root
-  - geant4
-  - cmake #needed to compile Geant examples
-  - openssh #otherwise ssh is broken due to bug with openssl it seems
-  - qt
+#  - pytorch-gpu=2.0.0 -> seems to need to come after cuda
+  - rapidsai::cudf=23.02.00
   - pip:
+      - tensorflow==2.13
+      - tensorrt
+      #- cupy
+      #-cuda11x
       - astunparse
       - awkward
       - dask
@@ -32,10 +38,10 @@ dependencies:
       - numba
       - numexpr
       - numpy
-      - pandas
+      - pandas==1.5.3
       - particle
       - protobuf
-      - pyarrow
+      - pycuda
       - pybind11
       - scikit-learn
       - tables
@@ -47,8 +53,13 @@ dependencies:
       - jax[cpu]
       - graphviz
       - dask-labextension==6.2.0
+      - torch==2.0.0
+      - torchvision
+      - torchvision
+      - torchaudio
       
 variables:
-  LD_LIBRARY_PATH: "'$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CONDA_PREFIX/x86_64-conda-linux-gnu/sysroot/usr/lib64/'"
-  QT_QPA_PLATFORM: "offscreen"
+  LD_LIBRARY_PATH: "'$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/'"
+  XLA_FLAGS: "'--xla_gpu_cuda_data_dir=$CONDA_PREFIX/'"
+  NUMBA_CUDA_ENABLE_MINOR_VERSION_COMPATIBILITY: "1"
   
