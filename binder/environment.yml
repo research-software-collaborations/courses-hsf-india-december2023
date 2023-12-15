@@ -47,6 +47,7 @@ dependencies:
       - jax[cpu]
       - graphviz
       - dask-labextension==6.2.0
+      - qtconsole
       
 variables:
   LD_LIBRARY_PATH: "'$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CONDA_PREFIX/x86_64-conda-linux-gnu/sysroot/usr/lib64/'"
