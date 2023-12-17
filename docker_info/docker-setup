@@ -1,0 +1,18 @@
+# Dockerfile.just-mamba
+FROM condaforge/mambaforge
+COPY binder/environment.yml .
+
+# Fix enter timezone issue - 
+ENV TZ=Asia/Kolkata
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN apt-get update
+RUN apt-get upgrade -y
+RUN apt-get install build-essential cmake  -y
+
+RUN mamba env create -f environment.yml && mamba init bash
+
+# Make RUN commands use the new environment:
+RUN echo "mamba activate hsf-india" >> ~/.bashrc
+SHELL ["/bin/bash", "--login", "-c"]
+
