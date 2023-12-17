@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Scientific Python lectures
+git clone https://github.com/jpivarski-talks/2023-12-18-hsf-india-tutorial-bhubaneswar.git
+
+exec "$@"
