@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Scientific Python lectures
+git clone https://github.com/ckoraka/hsf-india-gpus
+exec "$@"
