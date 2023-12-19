@@ -13,10 +13,8 @@ dependencies:
   - lz4
   - python-xxhash
   - root
-  - geant4
   - cmake #needed to compile Geant examples
   - openssh #otherwise ssh is broken due to bug with openssl it seems
-  - qt
   - pip:
       - astunparse
       - awkward
@@ -48,7 +46,12 @@ dependencies:
       - jax[cpu]
       - graphviz
       - dask-labextension==6.2.0
-      - qtconsole
+      - tensorflow==2.13
+      - tensorflow-probability
+      - scikit-learn
+      - seaborn
+      - xgboost
+
       
 variables:
   LD_LIBRARY_PATH: "'$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CONDA_PREFIX/x86_64-conda-linux-gnu/sysroot/usr/lib64/'"
