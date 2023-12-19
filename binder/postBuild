@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+cd /data/marchegiani_matteo
+rm *.root
+cd
+echo "all good"
+
