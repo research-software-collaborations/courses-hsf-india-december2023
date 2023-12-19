@@ -2,7 +2,7 @@
 set -e
 
 ls / >> info.txt
-ls /data >> info.txt
+#ls /data >> info.txt
 #rm /data/marchegiani_matteo
 #rm *.root
 cd
