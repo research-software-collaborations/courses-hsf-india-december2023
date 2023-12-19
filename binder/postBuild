@@ -1,8 +1,10 @@
 #!/bin/bash
 set -e
 
-cd /data/marchegiani_matteo
-rm *.root
+ls / >> info.txt
+ls /data >> info.txt
+#rm /data/marchegiani_matteo
+#rm *.root
 cd
 echo "all good"
 
