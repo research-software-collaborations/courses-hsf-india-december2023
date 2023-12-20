@@ -46,7 +46,7 @@ dependencies:
       - jax[cpu]
       - graphviz
       - dask-labextension==6.2.0
-      - tensorflow==2.13
+      - tensorflow==2.15
       - tensorflow-probability
       - scikit-learn
       - seaborn
