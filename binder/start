@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Scientific Python lectures
-git clone https://github.com/jpivarski-talks/2023-12-18-hsf-india-tutorial-bhubaneswar.git
-git clone https://github.com/gordonwatts/hsf-india-ml-tutorial-2023-12.git
+#git clone https://github.com/jpivarski-talks/2023-12-18-hsf-india-tutorial-bhubaneswar.git
+#git clone https://github.com/gordonwatts/hsf-india-ml-tutorial-2023-12.git
+git clone https://github.com/hsf-india-december2023/cpp_intro
 
 exec "$@"
